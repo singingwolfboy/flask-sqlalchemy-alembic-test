@@ -19,9 +19,9 @@ Set the `FLASK_APP` enviornment variable, and run `flask db create`. You'll
 notice that it creates and applies an initial Alembic migration.
 
 Delete the `test.sqlite3` file and the `migrations` directory to undo everything.
-Now, run `pip uninstall Flask-Alembic` and comment out the lines in `app.py`
-that refer to it. Run `flask db create` again, and it will create the tables
-in the database without handling migrations.
+Comment out the lines in `app.py` that refer to Flask-Alembic, and run
+`flask db create` again. This time, it will create the database tables
+without handling migrations.
 
 I haven't yet figured out what to do about `flask db drop`. Is it worth
 re-implementing it in Flask-Alembic, for consistency? If so, I'm not sure
